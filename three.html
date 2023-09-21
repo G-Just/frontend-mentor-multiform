@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="step_1 steps">
+                <p>STEP 1</p>
+                <h4>YOUR INFO</h4>
+            </div>
+            <div class="step_2 steps">
+                <p>STEP 2</p>
+                <h4>SELECT PLAN</h4>
+            </div>
+            <div class="step_3 steps">
+                <p>STEP 3</p>
+                <h4>ADD-ONS</h4>
+            </div>
+            <div class="step_4 steps">
+                <p>STEP 4</p>
+                <h4>SUMMARY</h4>
+            </div>
+        </div>
+        <div class='input_field'>
+            <div class="input_field_header">
+                <h1>Pick add-ons</h1>
+                <p>Add-ons help enhance your gaming experience.</p>
+            </div>
+            <form id="form" action="four.html" method="GET">
+                <div class="form-wrapper addons-form-wrapper">
+                    <div class="form-inputs addons">
+                        <input type="checkbox" name="" class="addon-checkbox">
+                        <div class="form-addons-text-stack">
+                            <h4>Online service</h4>
+                            <p>Acces to multiplayer games</p>
+                        </div>
+                        <p class="price">+$1/mo</p>
+                    </div>
+
+                    <div class="form-inputs addons">
+                        <input type="checkbox" name="" class="addon-checkbox">
+                        <div class="form-addons-text-stack">
+                            <h4>Larger storage</h4>
+                            <p>Extra 1TB of cloud storage</p>
+                        </div>
+                        <p class="price">+$2/mo</p>
+                    </div>
+
+                    <div class="form-inputs addons">
+                        <input type="checkbox" name="" class="addon-checkbox">
+                        <div class="form-addons-text-stack">
+                            <h4>Customizable Profile</h4>
+                            <p>Custom theme on your profile</p>
+                        </div>
+                        <p class="price">+$2/mo</p>
+                    </div>
+
+                </div>
+                <div class="navs">
+                    <a href="two.html">Go back</a>
+                    <button type="submit">Next Step</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="scripts/script.js"></script>
+
+</html>

@@ -1,0 +1,558 @@
+/* =============== META =============== */
+:root {
+    --dark-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --background: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
+*,*:focus,*:hover {
+    outline: none;
+}
+
+/* =============== BODY =============== */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    background-color: var(--background);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* =============== MAIN CONTAINER =============== */
+.main-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: var(--white);
+    width: 963px;
+    height: 595px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* =============== SIDE BAR =============== */
+.sidebar {
+    background-image: url(multi-step-form-main/assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    color: var(--light-gray);
+    display: flex;
+    gap: 1.5em;
+    flex-direction: column;
+    padding-left: 30%;
+    padding-top: 15%;
+}
+
+.sidebar p {
+    color: var(--light-gray);
+    margin: 0.2em 0;
+}
+
+.sidebar h4 {
+    margin: 0;
+}
+
+.steps {
+    position: relative;
+}
+
+.steps::before {
+    position: absolute;
+    outline: white solid 1px;
+    width: 2em;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -3em;
+    top: 0.5em;
+}
+
+.selected::before {
+    background-color: var(--light-blue);
+    color: black;
+}
+
+
+.step_1::before {
+    content: '1';
+}
+
+.step_2::before {
+    content: '2';
+}
+
+.step_3::before {
+    content: '3';
+}
+
+.step_4::before {
+    content: '4';
+}
+
+/* =============== INPUT FIELD (ROOT::BASE) =============== */
+.input_field {
+    margin: 1em 13%;
+    font-weight: 500;
+    position: relative;
+}
+
+/* =============== INPUT FIELD HEADER =============== */
+.input_field_header > h1 {
+    color: var(--dark-blue);
+    line-height: 1;
+    margin: 0;
+    margin-top: 5%;
+}
+
+.input_field_header > p {
+    color: var(--cool-gray);
+    margin-bottom: 2em;
+}
+
+/* =============== FORM =============== */
+#form * {
+    font-size: 16px;
+}
+
+/* =============== 1ST PAGE FORM TEXT INPUTS =============== */
+.text-inputs {
+    font-weight: 700;
+    width: 100%;
+    height: 3em;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+    position: relative;
+}
+
+.text-inputs::placeholder{
+    color:var(--cool-gray)
+}
+
+/* =============== GLOBAL FORM INPUTS =============== */
+.form-inputs {
+border: 1px var(--light-gray) solid;
+}
+
+.form-inputs:hover {
+    border: solid var(--dark-blue) 1px;
+}
+
+/* =============== GLOBAL PSEUDO ELEMENTS / JS ADDED ELEMENTS =============== */
+.failed > input {
+    border: 1px solid var(--strawberry-red) !important;
+}
+
+.failed::before{
+    content: 'This field is required';
+    transform: translate(0, 5px);
+    position: absolute;
+    right: 0;
+    color: var(--strawberry-red);
+}
+
+.plan-form-failed::before {
+    content: '*Selection is required';
+    position: absolute;
+    right: -1.5em;
+    transform: translate(0, 2.5em);
+    color: var(--strawberry-red);
+}
+
+.highlighted {
+    border: solid var(--dark-blue) 1px;
+}
+
+.free-period {
+    display: none;
+    font-size: 0.8em !important;
+    color: var(--dark-blue) !important;
+}
+
+.enabled_p {
+    color: var(--dark-blue) !important;
+    text-align: center;
+}
+
+/* =============== GLOBAL FORM WRAPPER =============== */
+.form-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: space-between;
+}
+
+.form-wrapper h4 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.form-wrapper p {
+    margin: 0;
+    margin-top: .5em;
+    color: var(--cool-gray);
+}
+
+.text-form-wrapper * {
+    color: var(--dark-blue);
+}
+
+.text-form-wrapper div > input {
+    margin-top: 0.5em;
+}
+
+.text-form-wrapper div > label {
+    font-weight: 500;
+}
+
+.plans-form-wrapper {
+    flex-direction: row;
+    gap: 1em;
+}
+
+.addon-form-wrapper {
+    flex-direction: column;
+    gap: 1em;
+}
+
+.checkout-form-wrapper {
+    padding-left: 2em;
+    padding-top: 1.5em;
+}
+
+/* =============== 2ND PAGE PLAN CARDS =============== */
+.plans {
+    width: 9em;
+    height: 11em;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.plans input {
+    display: none;
+}
+
+.plans h4 {
+    margin-top: 2em;
+}
+
+/* =============== 2ND PAGE TIME FRAME SELECTOR =============== */
+.switch {
+    display: inline-block;
+    width: 3em;
+    height: 1.5em;
+    position: relative;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-blue);
+    -webkit-transition: .4s;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    left: .3em;
+    bottom: 0.25em;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: var(--dark-blue);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(1.4em);
+    -ms-transform: translateX(1.4em);
+    transform: translateX(1.4em);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.payment-time {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.payment-time p {
+    font-size: 1.2em;
+    margin: 0 1em;
+    color: var(--cool-gray)
+}
+
+/* =============== NAVIGATION BUTTONS =============== */
+
+.navs {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.navs button {
+    float: right;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.navs a {
+    color: var(--dark-blue);
+    text-decoration: none;
+}
+
+/* =============== 3RD PAGE ADDON SELECT =============== */
+
+.addons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.addons > p {
+    color: var(--purplish-blue);
+}
+
+.addons > input {
+    width: 20px;
+    aspect-ratio: 1;
+    accent-color: var(--purplish-blue);
+    cursor: pointer;
+    pointer-events:none;
+}
+
+.form-addons-text-stack {
+    width: 70%;
+}
+
+/* =============== 4TH PAGE CHECKOUT =============== */
+
+.checkout-form-wrapper-plan, .checkout-add, .checkout-form-wrapper-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkout-form-wrapper-text-stack h4 {
+    margin: 0;
+    margin-bottom: 0.4em;
+    color: var(--dark-blue);
+}
+
+.checkout-form-wrapper-text-stack a {
+    font-size: 0.9em !important;
+    color: var(--purplish-blue);
+    text-decoration: underline;
+}
+
+.checkout-form-wrapper-plan p {
+    color: var(--dark-blue);
+    font-weight: 700 !important;
+}
+
+.checkout-add p, .checkout-form-wrapper-total p {
+    color: var(--cool-gray);
+}
+
+.pr {
+    color: var(--dark-blue) !important;
+    font-size: 0.9em !important;
+}
+
+.checkout-form-wrapper-total p {
+    margin-top: 1rem;
+}
+
+.tot_pr {
+    color: var(--purplish-blue) !important;
+    font-size: 1.5em !important;
+}
+
+#checkout-online_service, #checkout-larger_storage, #checkout-customizable_profile, #checkout-hr{
+    display: none;
+}
+
+/* =============== 4TH PAGE ENDEX =============== */
+.input_field {
+    width: 464px;
+}
+
+.endex-wrapper {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.endex-wrapper h1 {
+    color: var(--dark-blue);
+    margin: 0;
+    margin-top: 1em;
+}
+
+.endex-wrapper p {
+    text-align: center;
+    color: var(--cool-gray);
+}
+
+/* =============== MOBILE =============== */
+
+@media (max-width: 375px){
+    html {
+        overflow: hidden;
+    }
+
+    body{
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .sidebar {
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:65%;
+        background-image: url(multi-step-form-main/assets/images/bg-sidebar-desktop.svg);
+        clip-path: inset(0 0 20% 0);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: bottom;
+        border-radius: 0;
+        color: var(--light-gray);
+        justify-content: center;
+        flex-direction: row;
+        display: flex;
+        padding: 0;
+        gap: 4em;
+    }
+
+    .steps::before {
+        position: absolute;
+        outline: white solid 1px;
+        width: 2.5em;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        left: -1.2em;
+        top: 2em;
+    }
+    
+    .sidebar p, .sidebar h4{
+        display: none;
+    }
+    .input_field {
+        width: 100%;
+        height: 90%;
+        background-color: var(--white);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0;
+        margin-top: 4.5em;
+    }
+    .navs {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0em;
+    }
+
+    .failed::before{
+        content: 'This field is required';
+        transform: translate(-20px, 5px);
+        position: absolute;
+        right: 0;
+        color: var(--strawberry-red);
+    }
+    
+    .plans-form-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .plans {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 5em;
+    }
+
+    .plans h4 {
+        margin: 0 0.5em;
+    }
+
+    .plans p {
+        margin: 0 0.5em;
+    }
+
+}

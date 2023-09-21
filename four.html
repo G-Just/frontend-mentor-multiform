@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="4">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="step_1 steps">
+                <p>STEP 1</p>
+                <h4>YOUR INFO</h4>
+            </div>
+            <div class="step_2 steps">
+                <p>STEP 2</p>
+                <h4>SELECT PLAN</h4>
+            </div>
+            <div class="step_3 steps">
+                <p>STEP 3</p>
+                <h4>ADD-ONS</h4>
+            </div>
+            <div class="step_4 steps">
+                <p>STEP 4</p>
+                <h4>SUMMARY</h4>
+            </div>
+        </div>
+        <div class='input_field'>
+            <div class="input_field_header">
+                <h1>Finishing up</h1>
+                <p>Double-check if everything looks OK before confirming.</p>
+            </div>
+            <form id="form" action="four-endex.html" method="GET">
+                <div class="checkout-form-wrapper">
+                    <div class="checkout-form-wrapper-plan">
+                        <div class="checkout-form-wrapper-text-stack">
+                            <h4 id="checkout-form-plan-text"></h4>
+                            <a href="two.html">Change</a>
+                        </div>
+                        <p id="plan-price"></p>
+                    </div>
+                <hr>
+                    <div class="checkout-form-wrapper-addons">
+                        <div id="checkout-online_service" class="checkout-add">
+                            <p id="addon1">Online service</p>
+                            <p id="addon1_price" class="pr"></p>
+                        </div>
+                        <div id="checkout-larger_storage" class="checkout-add">
+                            <p id="addon2">Larger storage</p>
+                            <p id="addon2_price" class="pr"></p>
+                        </div>
+                        <div id="checkout-customizable_profile" class="checkout-add">
+                            <p id="addon3">Customizable Profile</p>
+                            <p id="addon3_price" class="pr"></p>
+                        </div>
+                    </div>
+                    <hr id="checkout-hr">
+                    <div class="checkout-form-wrapper-total">
+                        <p>Total: </p>
+                        <p class="tot_pr" id="pr">$12/mo</p>
+                    </div>
+                </div>
+                <div class="navs">
+                    <a href="three.html">Go back</a>
+                    <button id='checkout-button' type="submit">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="scripts/script.js"></script>
+
+</html>
